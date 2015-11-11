@@ -1,7 +1,7 @@
 {
   "name": "justo-plugin-cli",
-  "version": "0.1.0",
-  "description": "Task for executing commands.",
+  "version": "0.2.0",
+  "description": "Justo.js plugin for executing commands.",
   "homepage": "http://www.justojs.org",
   "author": {
     "name": "The Justo.js Development Group",
@@ -18,32 +18,27 @@
   "keywords": [
     "Justo",
     "Justo.js",
-    "Justo plugin",
     "justo-plugin"
   ],
   "bugs": {
-    "url": "https://github.com/justojsx/justo-plugin-cli/issues",
+    "url": "https://github.com/justojsp/justo-plugin-cli/issues",
     "email": "justojs.org@outlook.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/justojsx/justo-plugin-cli.git"
+    "url": "https://github.com/justojsp/justo-plugin-cli.git"
   },
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">=4.0"
   },
   "dependencies": {},
   "peerDependencies": {},
   "devDependencies": {
     "justo-assert": "*",
-    "justo-assert-fs": "*",
-    "justo-assert-childprocess": "*",
-    "justo-double": "*",
     "mocha": "*",
     "grunt": "^0.4.5",
-    "grunt-babel": "*",
+    "grunt-babel": "^5",
     "grunt-contrib-clean": "*",
-    "grunt-contrib-concat": "*",
     "grunt-contrib-copy": "*",
     "grunt-contrib-jshint": "*",
     "grunt-travis-lint": "*",

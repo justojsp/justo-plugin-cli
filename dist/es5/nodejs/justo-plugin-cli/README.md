@@ -1,71 +1,44 @@
-[![Build Status](https://travis-ci.org/justojsx/justo-plugin-cli.svg)](https://travis-ci.org/justojsx/justo-plugin-cli)
+[![Build Status](https://travis-ci.org/justojsp/justo-plugin-cli.svg)](https://travis-ci.org/justojsp/justo-plugin-cli)
 
-Task for executing commands.
+Justo.js plugin to execute commands.
 
-*Proudly made in Valencia, Spain, EU.*
+*Proudly made with ♥ in Valencia, Spain, EU.*
 
-## Options
-
-### command
-
-Command to execute:
+## Install
 
 ```
-command : string
+npm install justo-plugin-cli
 ```
 
-### arguments
-
-Arguments to pass:
+## Use
 
 ```
-arguments : string[]
+const cli = require("justo-plugin-cli");
 ```
 
-### env
-
-Environment variables:
+To run a command, the task must be called as follows:
 
 ```
-env : object
+cli(opts, {cmd, args, wd, stdin}) : object
 ```
 
-### workingDir
+The parameters are:
 
-Working directory:
+- `cmd` or ` command`. The command to execute.
+- `args` or `arguments`. The arguments to pass.
+- `wd` or `workingDir`. The working directory.
+- `stdin`. The standard input.
 
-```
-workingDir : string
-```
+The task returns an object:
 
-### stdin
+- `stdout`. The standard output.
+- `stderr`. The standard error.
+- `exitCode`. The exit code.
 
-Input to pass:
-
-```
-stdin : string
-```
-
-### stdout
-
-Standard output expected:
+Example:
 
 ```
-stdout : string
-```
-
-### stderr
-
-Standard error output expected:
-
-```
-stderr : string
-```
-
-### exitCode
-
-Exit code expected:
-
-```
-exitCode : number
+if (cli("Transpile", {cmd: "babel"}).exitCode != 0) {
+  //...
+}
 ```
