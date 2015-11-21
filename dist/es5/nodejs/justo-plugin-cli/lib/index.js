@@ -8,5 +8,5 @@ Object.defineProperty(exports, "__esModule", {
 var _justo = require("justo");
 
 //api
-exports["default"] = (0, _justo.task)("org.justojs", "cli", require("./cli"));
+exports["default"] = (0, _justo.simple)({ ns: "org.justojs", name: "cli" }, require("./cli"));
 module.exports = exports["default"];
