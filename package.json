@@ -1,6 +1,6 @@
 {
   "name": "justo-plugin-cli",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Justo.js plugin for executing commands.",
   "homepage": "http://www.justojs.org",
   "author": {
@@ -29,20 +29,19 @@
     "url": "https://github.com/justojsp/justo-plugin-cli.git"
   },
   "engines": {
-    "node": ">=4.0"
+    "node": ">=4.0.0",
+    "npm": ">=3.0.0"
   },
   "dependencies": {},
   "peerDependencies": {},
   "devDependencies": {
+    "justo": "*",
     "justo-assert": "*",
-    "mocha": "*",
-    "grunt": "^0.4.5",
-    "grunt-babel": "^5",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-copy": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-travis-lint": "*",
-    "grunt-mocha-test": "*"
+    "justo-fs": "*",
+    "justo-plugin-babel": "*",
+    "justo-plugin-clean": "*",
+    "justo-plugin-copy": "*",
+    "justo-plugin-jshint": "*"
   },
   "preferGlobal": false,
   "main": "lib/index.js",
@@ -51,7 +50,7 @@
     "test"
   ],
   "scripts": {
-    "test": "grunt test"
+    "test": "justo test"
   },
   "license": "MIT"
 }

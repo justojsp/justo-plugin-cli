@@ -6,7 +6,7 @@ node_js:
   - 5.0
   - 5.1
 sudo: false
-before_install: npm install -g grunt-cli
+before_install: npm install -g justo-cli
 install: npm install
 #before_script:
 #script:
