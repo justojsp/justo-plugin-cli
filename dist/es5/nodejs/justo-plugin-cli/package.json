@@ -39,8 +39,7 @@
     "justo-assert": "*",
     "justo-fs": "*",
     "justo-plugin-babel": "*",
-    "justo-plugin-clean": "*",
-    "justo-plugin-copy": "*",
+    "justo-plugin-fs": "*",
     "justo-plugin-jshint": "*"
   },
   "preferGlobal": false,
