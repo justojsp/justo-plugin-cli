@@ -63,7 +63,7 @@ catalog.macro({name: "test", desc: "Unit test."}, {
 catalog.workflow({name: "publish", desc: "NPM publish."}, function() {
   publish("Publish in NPM", {
     who: "justojs",
-    src: "dist/es5/nodejs/justo-plugin-jshint"
+    src: "dist/es5/nodejs/justo-plugin-cli"
   });
 });
 
