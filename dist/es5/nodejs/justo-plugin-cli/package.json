@@ -1,17 +1,17 @@
 {
   "name": "justo-plugin-cli",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Justo.js plugin for executing commands.",
   "homepage": "http://www.justojs.org",
   "author": {
-    "name": "The Justo.js Development Group",
-    "email": "justojs.org@outlook.com",
+    "name": "JustoLabs",
+    "email": "justojs@justolabs.com",
     "url": "http://www.justojs.org"
   },
   "contributors": [
     {
       "name": "Raúl G. González",
-      "email": "raulggonzalezsw@outlook.com",
+      "email": "raulggonzalez@justojs.org",
       "url": ""
     }
   ],
@@ -22,7 +22,7 @@
   ],
   "bugs": {
     "url": "https://github.com/justojsp/justo-plugin-cli/issues",
-    "email": "justojs.org@outlook.com"
+    "email": "issues@justojs.org"
   },
   "repository": {
     "type": "git",
@@ -40,13 +40,13 @@
     "justo-fs": "*",
     "justo-plugin-babel": "*",
     "justo-plugin-fs": "*",
-    "justo-plugin-jshint": "*"
+    "justo-plugin-jshint": "*",
+    "justo-plugin-npm": "*"
   },
   "preferGlobal": false,
-  "main": "lib/index.js",
+  "main": "index.js",
   "files": [
-    "lib",
-    "test"
+    "lib"
   ],
   "scripts": {
     "test": "justo test"

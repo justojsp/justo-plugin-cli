@@ -4,7 +4,7 @@
 
 
 
-cli;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { "default": obj };}var _child_process = require("child_process");var _child_process2 = _interopRequireDefault(_child_process);function cli(params) {
+op;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { "default": obj };}var _child_process = require("child_process");var _child_process2 = _interopRequireDefault(_child_process);function op(params) {
   var cmd, args, opts, res;
 
 

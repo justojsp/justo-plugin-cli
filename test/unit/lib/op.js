@@ -1,7 +1,7 @@
 //imports
 const suite = require("justo").suite;
 const test = require("justo").test;
-const cli = require("../../../dist/es5/nodejs/justo-plugin-cli/lib/cli");
+const cli = require("../../../dist/es5/nodejs/justo-plugin-cli/lib/op");
 
 //suite
 suite("#cli()", function() {
