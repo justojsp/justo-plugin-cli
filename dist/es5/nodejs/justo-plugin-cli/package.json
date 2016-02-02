@@ -1,7 +1,7 @@
 {
   "name": "justo-plugin-cli",
-  "version": "0.2.4",
-  "description": "Justo.js plugin for executing commands.",
+  "version": "0.2.5",
+  "description": "Simple task to execute commands.",
   "homepage": "http://www.justojs.org",
   "author": {
     "name": "Justo Labs",

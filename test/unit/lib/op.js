@@ -52,4 +52,15 @@ suite("#cli()", function() {
       stderr: "Standard error output\n"
     });
   });
+
+  test("Run command without output with {output: true}", function() {
+    cli([{
+      cmd: "node",
+      stdin: "1+2"
+    }]).must.have({
+      exitCode: 0,
+      stdout: "",
+      stderr: ""
+    })
+  });
 })();

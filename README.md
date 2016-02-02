@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/justojsp/justo-plugin-cli.svg)](https://travis-ci.org/justojsp/justo-plugin-cli)
 
-Justo.js plugin to execute commands.
+Simple task to execute commands.
 
 *Proudly made with ♥ in Valencia, Spain, EU.*
 

@@ -31,8 +31,8 @@ op;var _child_process = require("child_process");var _child_process2 = _interopR
   if (res.stderr) res.stderr = res.stderr.toString();
 
   if (output) {
-    console.log(res.stdout);
-    console.log(res.stderr);}
+    if (res.stdout !== "" && res.stdout != "\n") console.log(res.stdout);
+    if (res.stderr !== "" && res.stderr != "\n") console.log(res.stderr);}
 
 
   return { 
