@@ -1,7 +1,7 @@
 //imports
 const suite = require("justo").suite;
 const test = require("justo").test;
-const cli = require("../../../dist/es5/nodejs/justo-plugin-cli/lib/op");
+const cli = require("../../../dist/es5/nodejs/justo-plugin-cli/lib/op").default;
 
 //suite
 suite("#cli()", function() {
@@ -39,5 +39,17 @@ suite("#cli()", function() {
 
   test("Run unknown command", function() {
     cli.must.raise(Error, [[{cmd: "unknown"}]]);
+  });
+
+  test("Run command with {output: true}", function() {
+    cli([{
+      cmd: "node",
+      stdin: "console.log('Standard output'); console.error('Standard error output')",
+      output: true
+    }]).must.have({
+      exitCode: 0,
+      stdout: "Standard output\n",
+      stderr: "Standard error output\n"
+    });
   });
 })();

@@ -1,10 +1,10 @@
 {
   "name": "justo-plugin-cli",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Justo.js plugin for executing commands.",
   "homepage": "http://www.justojs.org",
   "author": {
-    "name": "JustoLabs",
+    "name": "Justo Labs",
     "email": "justojs@justolabs.com",
     "url": "http://www.justojs.org"
   },
@@ -50,6 +50,5 @@
   ],
   "scripts": {
     "test": "justo test"
-  },
-  "license": "MIT"
+  }
 }

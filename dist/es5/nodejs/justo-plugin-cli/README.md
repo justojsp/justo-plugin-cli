@@ -24,10 +24,11 @@ cli(opts, {cmd, args, wd, stdin}) : object
 
 The parameters are:
 
-- `cmd` or ` command`. The command to execute.
-- `args` or `arguments`. The arguments to pass.
-- `wd` or `workingDir`. The working directory.
-- `stdin`. The standard input.
+- `cmd` or ` command` (string). The command to execute.
+- `args` or `arguments` (string[]). The arguments to pass.
+- `wd` or `workingDir` (string). The working directory.
+- `stdin` (string). The standard input.
+- `output` (boolean or string). Show the standard output: `true`, yep; `false`, nope. Default: `false`.
 
 The task returns an object:
 
@@ -38,7 +39,15 @@ The task returns an object:
 Example:
 
 ```
-if (cli("Transpile", {cmd: "babel"}).exitCode != 0) {
-  //...
-}
+cli("Transpile", {
+  cmd: /^win/.test(os.platform()) ? "babel.cmd" : "babel",
+  args: [
+    "--presets", "es2015",
+    "--retain-lines",
+    "--no-comments",
+    "-d", "build/es5",
+    "index.js",
+    "lib/op.js"
+  ]
+});
 ```
