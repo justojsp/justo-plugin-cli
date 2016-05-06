@@ -5,7 +5,7 @@ const cli = require("../../../dist/es5/nodejs/justo-plugin-cli/lib/op").default;
 
 //suite
 suite("#cli()", function() {
-  test("Run command with input", function() {
+  test("cli({cmd, stdin})", function() {
     cli([{cmd: "node", stdin: "console.log(1+2)"}]).must.have({
       exitCode: 0,
       stdout: "3\n",
@@ -13,7 +13,7 @@ suite("#cli()", function() {
     });
   });
 
-  test("Run command with arguments", function() {
+  test("cli(cmd, args:string[])", function() {
     cli([{cmd: "node", args: ["--eval", "console.log(1+2)"]}]).must.have({
       exitCode: 0,
       stdout: "3\n",
@@ -21,15 +21,21 @@ suite("#cli()", function() {
     });
   });
 
-  test("Run command with output expected", function() {
-    cli([{cmd: "node", stdin: "console.log('Standard output'); console.error('Standard error output');"}]).must.have({
+  test("cli({cmd, args:string})", function() {
+    cli([{cmd: "node", args: "--help"}]).must.have({
       exitCode: 0,
-      stdout: "Standard output\n",
-      stderr: "Standard error output\n"
+      stderr: ""
     });
   });
 
-  test("Run command with exit code expected", function() {
+  test("cli({cmd, arg})", function() {
+    cli([{cmd: "node", arg: "--help"}]).must.have({
+      exitCode: 0,
+      stderr: ""
+    });
+  });
+
+  test("cli({cmd, stdin})", function() {
     cli([{cmd: "node", stdin: "process.exit(1)"}]).must.have({
       exitCode: 1,
       stdout: "",
@@ -37,11 +43,30 @@ suite("#cli()", function() {
     });
   });
 
-  test("Run unknown command", function() {
+  test("cli({cmd, stdin}) - stdout and err returned", function() {
+    cli([{cmd: "node", stdin: "console.log('Standard output'); console.error('Standard error output');"}]).must.have({
+      exitCode: 0,
+      stdout: "Standard output\n",
+      stderr: "Standard error output\n"
+    });
+  });
+
+  test("cli({cmd, stdin}) - without stdout nor stderr", function() {
+    cli([{
+      cmd: "node",
+      stdin: "1+2"
+    }]).must.have({
+      exitCode: 0,
+      stdout: "",
+      stderr: ""
+    });
+  });
+
+  test("cli({cmd}) - unknown command", function() {
     cli.must.raise(Error, [[{cmd: "unknown"}]]);
   });
 
-  test("Run command with {output: true}", function() {
+  test("cli({cmd, output})", function() {
     cli([{
       cmd: "node",
       stdin: "console.log('Standard output'); console.error('Standard error output')",
@@ -53,14 +78,15 @@ suite("#cli()", function() {
     });
   });
 
-  test("Run command without output with {output: true}", function() {
+  test("cli({cmd, bg})", function() {
     cli([{
       cmd: "node",
-      stdin: "1+2"
+      stdin: "1+2",
+      bg: true
     }]).must.have({
-      exitCode: 0,
-      stdout: "",
-      stderr: ""
-    })
+      exitCode: undefined,
+      stdout: null,
+      stderr: null
+    });
   });
 })();

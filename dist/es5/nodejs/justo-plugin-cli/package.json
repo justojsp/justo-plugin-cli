@@ -1,11 +1,11 @@
 {
   "name": "justo-plugin-cli",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "Simple task to execute commands.",
   "homepage": "http://www.justojs.org",
   "author": {
     "name": "Justo Labs",
-    "email": "justojs@justolabs.com",
+    "email": "info@justolabs.com",
     "url": "http://www.justojs.org"
   },
   "contributors": [
@@ -18,7 +18,8 @@
   "keywords": [
     "Justo",
     "Justo.js",
-    "justo-plugin"
+    "justo-plugin",
+    "CLI"
   ],
   "bugs": {
     "url": "https://github.com/justojsp/justo-plugin-cli/issues",
@@ -35,6 +36,7 @@
   "dependencies": {},
   "peerDependencies": {},
   "devDependencies": {
+    "babel-preset-es2015": "*",
     "justo": "*",
     "justo-assert": "*",
     "justo-fs": "*",
