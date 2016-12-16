@@ -1,11 +1,11 @@
 {
   "name": "justo-plugin-cli",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Simple task to execute commands.",
   "homepage": "http://www.justojs.org",
   "author": {
     "name": "Justo Labs",
-    "email": "info@justolabs.com",
+    "email": "hello@justolabs.com",
     "url": "http://www.justojs.org"
   },
   "contributors": [
@@ -41,8 +41,8 @@
     "justo-assert": "*",
     "justo-fs": "*",
     "justo-plugin-babel": "*",
+    "justo-plugin-eslint": "*",
     "justo-plugin-fs": "*",
-    "justo-plugin-jshint": "*",
     "justo-plugin-npm": "*"
   },
   "preferGlobal": false,

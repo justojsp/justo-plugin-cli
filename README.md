@@ -30,8 +30,10 @@ The `opts` parameter:
 - `cmd` (string). The command to execute.
 - `arg` (string). The only argument.
 - `args` (string or string[]). The arguments to pass.
-- `wd` or `workingDir` (string). The working directory.
+- `wd` or `workDir` (string). The working directory.
 - `stdin` (string). The standard input.
+- `exitCode` (number). Exit code expected. Default: `0`.
+  If `undefined`, the exit code is not kept in mind.
 - `output` (boolean). Show the standard output? Default: `false`.
 - `bg` (boolean). Run in background? Default: `false`.
 

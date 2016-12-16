@@ -1,10 +1,10 @@
-"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default =
 
 
 
 
 
-op;var _child_process = require("child_process");var _child_process2 = _interopRequireDefault(_child_process);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function op(params) {
+op;var _child_process = require("child_process");var _child_process2 = _interopRequireDefault(_child_process);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function op(params, console) {
   var spawnOpts, opts, res;
 
 
@@ -18,19 +18,21 @@ op;var _child_process = require("child_process");var _child_process2 = _interopR
 
   spawnOpts = { encoding: "utf-8" };
 
-  if (opts.workingDir || opts.wd) spawnOpts.cwd = opts.workingDir || opts.wd;
+  if (opts.workDir || opts.wd) spawnOpts.cwd = opts.workDir || opts.wd;
   if (opts.env) spawnOpts.env = opts.env;
   if (opts.stdin) spawnOpts.input = opts.stdin;
+  if (!opts.hasOwnProperty("exitCode")) opts.exitCode = 0;
+  if (opts.hasOwnProperty("bg")) opts.background = opts.bg;
 
 
   if (opts.bg) {
     spawnOpts.detached = true;
     spawnOpts.stdio = "ignore";
     res = _child_process2.default.spawn(opts.cmd, opts.args, spawnOpts);
-    res.unref();} else 
-  {
-    res = _child_process2.default.spawnSync(opts.cmd, opts.args, spawnOpts);}
-
+    res.unref();
+  } else {
+    res = _child_process2.default.spawnSync(opts.cmd, opts.args, spawnOpts);
+  }
 
   if (res.error) throw res.error;
 
@@ -41,11 +43,17 @@ op;var _child_process = require("child_process");var _child_process2 = _interopR
 
     if (opts.output) {
       if (res.stdout !== "" && res.stdout != "\n") console.log(res.stdout);
-      if (res.stderr !== "" && res.stderr != "\n") console.log(res.stderr);}}
+      if (res.stderr !== "" && res.stderr != "\n") console.log(res.stderr);
+    }
 
+    if (opts.exitCode !== undefined && res.status != opts.exitCode) {
+      throw new Error("Expected exit code " + opts.exitCode + "; received " + res.status + ".");
+    }
+  }
 
+  return {
+    exitCode: res.status,
+    stdout: res.stdout,
+    stderr: res.stderr };
 
-  return { 
-    exitCode: res.status, 
-    stdout: res.stdout, 
-    stderr: res.stderr };}
+}
